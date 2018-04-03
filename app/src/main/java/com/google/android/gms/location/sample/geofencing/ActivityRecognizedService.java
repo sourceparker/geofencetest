@@ -131,7 +131,7 @@ public class ActivityRecognizedService extends IntentService {
 
             Log.i("Final : ",Integer.toString(finalActivity));
 
-           Toast.makeText(this,"Final : "+Integer.toString(finalActivity),Toast.LENGTH_LONG).show();
+           Toast.makeText(this,"Final  : "+Integer.toString(finalActivity),Toast.LENGTH_LONG).show();
 
         }
 
