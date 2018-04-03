@@ -57,5 +57,8 @@ final class Constants {
 
         // Bethel Hostel
         BAY_AREA_LANDMARKS.put( "Bethel Hostel", new LatLng(5.5968286,-0.2254853));
+
+        BAY_AREA_LANDMARKS.put( "Taifa", new LatLng(5.6525026999999,-0.250683400000000));
+
     }
 }

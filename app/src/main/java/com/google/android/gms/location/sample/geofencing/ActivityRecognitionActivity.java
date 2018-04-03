@@ -14,6 +14,7 @@ import com.google.android.gms.location.ActivityRecognition;
 public class ActivityRecognitionActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
 public GoogleApiClient mApiClient;
+private int timeLoop=3000;
 
 @Override
 protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +32,19 @@ protected void onCreate(Bundle savedInstanceState) {
 
 @Override
 public void onConnected(@Nullable Bundle bundle) {
-        Intent intent = new Intent( this, ActivityRecognizedService.class );
-        PendingIntent pendingIntent = PendingIntent.getService( this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT );
-        ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates( mApiClient, 3000, pendingIntent );
-        }
+        Intent intent = new Intent(this, ActivityRecognizedService.class);
+        PendingIntent pendingIntent = PendingIntent.getService(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
+        //Listens for a minute
+
+        while (timeLoop < 60000) {
+
+                timeLoop += 3000;
+
+
+                ActivityRecognition.ActivityRecognitionApi.requestActivityUpdates(mApiClient, timeLoop, pendingIntent);
+        }
+}
 @Override
 public void onConnectionSuspended(int i) {
 

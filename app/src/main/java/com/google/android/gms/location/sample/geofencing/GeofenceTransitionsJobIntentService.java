@@ -86,12 +86,11 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
             List<Geofence> triggeringGeofences = geofencingEvent.getTriggeringGeofences();
 
             // Get the transition details as a String.
-           // String geofenceTransitionDetails = getGeofenceTransitionDetails(geofenceTransition,
+       //         String geofenceTransitionDetails = getGeofenceTransitionDetails(geofenceTransition,
             //        triggeringGeofences);
 
             // Check what transition occurred
-            getGeofenceTransitionDetails(geofenceTransition,
-                         triggeringGeofences);
+            getGeofenceTransitionDetails(geofenceTransition, triggeringGeofences);
 
             //At this point, start ActivityRecognition if the transition was an entry or exit
 
@@ -164,7 +163,7 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
      * Posts a notification in the notification bar when a transition is detected.
      * If the user clicks the notification, control goes to the MainActivity.
      */
-    /*private void sendNotification(String notificationDetails) {
+    private void sendNotification(String notificationDetails) {
         // Get an instance of the Notification manager
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -221,7 +220,7 @@ public class GeofenceTransitionsJobIntentService extends JobIntentService {
         // Issue the notification
         mNotificationManager.notify(0, builder.build());
     }
-    */
+
 
     /**
      * Maps geofence transition types to their human-readable equivalents.
